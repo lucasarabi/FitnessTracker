@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Protect database connection ###
+src/main/resources/application.properties
