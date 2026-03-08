@@ -27,7 +27,7 @@ public class Workout {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid", nullable = false)
-    private User user; 
+    private AppUser user; 
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gymid", nullable = false)
