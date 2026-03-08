@@ -19,10 +19,11 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Workout> workouts;
+
     private String username;
     private String email;
     private LocalDate joinDate;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Workout> workouts;
 }
