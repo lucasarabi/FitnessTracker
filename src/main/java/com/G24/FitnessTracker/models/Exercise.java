@@ -1,6 +1,5 @@
 package com.G24.FitnessTracker.models;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GenerationType;
@@ -14,25 +13,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="set_log")
+@Table(name="exercise")
 @Getter
 @Setter
 @NoArgsConstructor
-public class SetLog {
+public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long setId;
+    private Long exerciseId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "workoutid", nullable = false)
-    private Workout workout;
+    @JoinColumn(name = "equipid") 
+    private Equipment equipment; 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exerciseid", nullable = false)
-    private Exercise exercise;
-
-    private int reps;
-    private int weight;
-    private int setOrder;
+    private String exerciseName;
+    private String muscleGroup;
 }

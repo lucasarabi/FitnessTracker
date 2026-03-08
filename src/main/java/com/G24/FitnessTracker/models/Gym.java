@@ -17,9 +17,7 @@ public class Gym {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long gymId;
 
-    @Column(nullable = false)
     private String gymName;
-
     private String location;
 
     @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL)

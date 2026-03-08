@@ -19,15 +19,10 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(nullable = false, unique = true)
     private String username;
-
-    @Column(nullable = false, unique = true)
     private String email;
-
     private LocalDate joinDate;
 
-    // One user can have many workouts
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Workout> workouts;
 }
